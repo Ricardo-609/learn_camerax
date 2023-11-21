@@ -74,6 +74,10 @@ public class MainActivity extends AppCompatActivity {
         public static final String TAG = "learn_camerax";
         public static final String FILENAME_FORMAT = "yyyy-MM-dd-HH-mm-ss-SSS";
         public static final int REQUEST_CODE_PERMISSIONS = 10;
-        public static final String[] REQUIRED_PERMISSIONS = new String[]{Manifest.permission.CAMERA};
+        public static final String[] REQUIRED_PERMISSIONS = new String[]{
+                Manifest.permission.CAMERA,
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE
+                };
     }
 }
