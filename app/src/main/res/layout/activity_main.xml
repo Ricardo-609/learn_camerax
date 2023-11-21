@@ -10,7 +10,7 @@
         android:id="@+id/camera_capture_button"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layou_marginBottom="50dp"
+        android:layout_marginBottom="50dp"
         android:scaleType="fitCenter"
         android:text="Take Photo"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -21,7 +21,7 @@
     <androidx.camera.view.PreviewView
         android:id="@+id/viewFinder"
         android:layout_width="match_parent"
-        android:layou_height="match_parent"
+        android:layout_height="match_parent"
         />
 
 
