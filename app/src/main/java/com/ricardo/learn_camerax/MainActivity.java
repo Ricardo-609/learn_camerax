@@ -3,8 +3,11 @@ package com.ricardo.learn_camerax;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.camera.core.CameraSelector;
+import androidx.camera.core.ImageAnalysis;
+import androidx.camera.core.ImageAnalysis.Analyzer;
 import androidx.camera.core.ImageCapture;
 import androidx.camera.core.ImageCaptureException;
+import androidx.camera.core.ImageProxy;
 import androidx.camera.core.Preview;
 import androidx.camera.lifecycle.ProcessCameraProvider;
 import androidx.camera.view.PreviewView;
@@ -88,6 +91,10 @@ public class MainActivity extends AppCompatActivity {
                 // 创建拍照所需的实例
                 imageCapture = new ImageCapture.Builder().build();
 
+                // 设置预览帧分析
+                ImageAnalysis imageAnalysis = new ImageAnalysis.Builder()
+                        .build();
+                imageAnalysis.setAnalyzer(cameraExecutor, new MyAnalyzer());
 
                 // 重新绑定用例前先解绑
                 processCameraProvider.unbindAll();
@@ -97,7 +104,8 @@ public class MainActivity extends AppCompatActivity {
                 // 绑定拍照用例
                 processCameraProvider.bindToLifecycle(MainActivity.this, cameraSelector,
                         preview,
-                        imageCapture);
+                        imageCapture,
+                        imageAnalysis);
             } catch (Exception e) {
                 Log.e(Configuration.TAG, "绑定失败");
             }
@@ -166,4 +174,13 @@ public class MainActivity extends AppCompatActivity {
                 Manifest.permission.WRITE_EXTERNAL_STORAGE
                 };
     }
+
+    private static class MyAnalyzer implements Analyzer{
+        @Override
+        public void analyze(@NonNull ImageProxy image) {
+            Log.d(Configuration.TAG, "Image's stamp is " + image.getImage().getTimestamp());
+            image.close();
+        }
+    }
 }
+
