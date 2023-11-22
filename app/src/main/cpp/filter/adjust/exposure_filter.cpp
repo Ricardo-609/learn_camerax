@@ -1,7 +1,3 @@
-//
-// Created by poney.ma on 2020/10/28.
-//
-
 #include "exposure_filter.h"
 
 void ExposureFilter::OnInit() {
@@ -21,7 +17,7 @@ const GLchar *ExposureFilter::GetFragmentShader() {
            " {\n"
            "     highp vec4 textureColor = texture2D(inputImageTexture, textureCoordinate);\n"
            "     \n"
-           "     gl_FragColor = vec4(textureColor.rgb * pow(2.0, exposure), textureColor.w);\n"
+           "     gl_FragColor = vec4(textureColor.rgb * pow(2.0, exposure), textureColor.w);\n"     // 基于原色值的指数型叠加
            " } ";
 }
 

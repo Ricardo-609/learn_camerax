@@ -34,10 +34,10 @@ void ImageFilter::DoDraw(int textureId, void *vertexPos, void *texturePos) {
 
 const GLchar *ImageFilter::GetVertexShader() {
     return
-            "attribute vec4 position;\n"
-            "attribute vec4 inputTextureCoordinate;\n"
+            "attribute vec4 position;\n"                    // 顶点坐标
+            "attribute vec4 inputTextureCoordinate;\n"      // 纹理坐标
             " \n"
-            "varying vec2 textureCoordinate;\n"
+            "varying vec2 textureCoordinate;\n"             // 输出纹理坐标
             " \n"
             "void main()\n"
             "{\n"
@@ -48,7 +48,7 @@ const GLchar *ImageFilter::GetVertexShader() {
 
 const GLchar *ImageFilter::GetFragmentShader() {
 
-    return "precision mediump float;\n"
+    return "precision mediump float;\n"                 // 配置精度
            "varying highp vec2 textureCoordinate;\n"
            " \n"
            "uniform sampler2D inputImageTexture;\n"

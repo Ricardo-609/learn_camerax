@@ -1,7 +1,3 @@
-//
-// Created by poney.ma on 2020/10/30.
-//
-
 #include "hue_filter.h"
 void HueFilter::OnInit() {
     ImageFilter::OnInit();
@@ -20,7 +16,7 @@ const GLchar *HueFilter::GetFragmentShader() {
            "const highp vec4 kRGBToI = vec4 (0.595716, -0.274453, -0.321263, 0.0);\n"
            "const highp vec4 kRGBToQ = vec4 (0.211456, -0.522591, 0.31135, 0.0);\n"
            "\n"
-           "const highp vec4 kYIQToR = vec4 (1.0, 0.9563, 0.6210, 0.0);\n"
+           "const highp vec4 kYIQToR = vec4 (1.0, 0.9563, 0.6210, 0.0);\n"          // 切换YIQ色彩空间进行计算
            "const highp vec4 kYIQToG = vec4 (1.0, -0.2721, -0.6474, 0.0);\n"
            "const highp vec4 kYIQToB = vec4 (1.0, -1.1070, 1.7046, 0.0);\n"
            "\n"

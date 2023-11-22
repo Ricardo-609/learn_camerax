@@ -1,7 +1,3 @@
-//
-// Created by poney.ma on 2020/10/29.
-//
-
 #include "saturation_filter.h"
 
 void SaturationFilter::OnInit() {
@@ -26,6 +22,9 @@ const GLchar *SaturationFilter::GetFragmentShader() {
            "    lowp float luminance = dot(textureColor.rgb, luminanceWeighting);\n"
            "    lowp vec3 greyScaleColor = vec3(luminance);\n"
            "    \n"
+           // Gray = R0.2125 + G0.7154 + B*0.0721
+           // 饱和度 = X·原色 + Y·灰度值，其中（x+y=1）
+           // GLSL内置函数 mix(x,y,a) = x*(1-a)+y*a，刚好满足饱和度的公式定义
            "    gl_FragColor = vec4(mix(greyScaleColor, textureColor.rgb, saturation), textureColor.w);\n"
            "     \n"
            " }";;

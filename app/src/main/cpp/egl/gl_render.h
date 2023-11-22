@@ -30,12 +30,13 @@ private:
     JavaVM *m_jvm_for_thread = NULL;
 
     //Surface引用，必须要使用引用，否则无法在线程中操作
+    // 对于gl_render来说，输入的是外部的surface对象，输出的是ANativeWindow,EglSurface
     jobject m_surface_ref = NULL;
 
     //本地屏幕
     ANativeWindow *m_native_window = NULL;
 
-    //EGL显示表面
+    //EGL显示表面 这里是自定义的EglSurface包装类，不是系统提供的EglSurface
     EglSurface *m_egl_surface = NULL;
 
     int m_window_width = 0;

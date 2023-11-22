@@ -187,6 +187,7 @@ extern "C"
 JNIEXPORT jint JNICALL
 Java_com_ricardo_learn_1camerax_MainActivity_createGLRender(JNIEnv *env, jobject thiz,
                                                              jobject surface) {
+    // 创建渲染线程
     GLRender *glRender = new GLRender(env);
 
     glRender->SetSurface(surface);

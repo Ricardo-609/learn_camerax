@@ -1,7 +1,3 @@
-//
-// Created by poney.ma on 2020/10/28.
-//
-
 #include "contrast_image_filter.h"
 
 
@@ -22,6 +18,7 @@ const GLchar *ContrastImageFilter::GetFragmentShader() {
            " {\n"
            "     lowp vec4 textureColor = texture2D(inputImageTexture, textureCoordinate);\n"
            "     \n"
+           // 画面黑白的比值。简单的线性对比度算法：结果=中值差*对比度+中值
            "     gl_FragColor = vec4(((textureColor.rgb - vec3(0.5)) * m_contrast + vec3(0.5)), textureColor.w);\n"
            " }";
 

@@ -9,11 +9,11 @@ extern "C" {
 class EglCore {
 private:
     const char *TAG = "EglCore";
-    //EGL显示窗口
+    //EGL显示窗口 EGL定义的一个抽象的系统显示类，用于操作设备窗口
     EGLDisplay m_egl_dsp = EGL_NO_DISPLAY;
-    //EGL上下文
+    //EGL上下文 OpenGL上下文，用于存储OpenGL的绘制状态信息、数据
     EGLContext m_egl_context = EGL_NO_CONTEXT;
-    //EGL配置
+    //EGL配置，如rgba位数
     EGLConfig m_egl_config = NULL;
 
     EGLConfig GetEGLConfig();

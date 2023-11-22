@@ -8,7 +8,8 @@
 class TriangleDrawer : public BaseDrawer {
 private:
     const char *TAG = "TriangleDrawer";
-
+    // 三角形，需要指定三个顶点，每个顶点都有一个3D位置
+    // 因为绘制的时平面（2D）三角形，所有顶点的z轴位置设置为0.0f
     const GLfloat m_vertex_coors[9] = {
             -0.5f, -0.5f, 0.0f,//左下
             0.5f, -0.5f, 0.0f,//右下

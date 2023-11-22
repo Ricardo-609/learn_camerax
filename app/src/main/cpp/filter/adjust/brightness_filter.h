@@ -1,7 +1,3 @@
-//
-// Created by poney.ma on 2020/10/29.
-//
-
 #ifndef BLOGDEMO_BRIGHTNESS_FILTER_H
 #define BLOGDEMO_BRIGHTNESS_FILTER_H
 

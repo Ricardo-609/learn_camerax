@@ -1,7 +1,3 @@
-//
-// Created by poney.ma on 2020/11/3.
-//
-
 #ifndef BLOGDEMO_SHARPEN_FILTER_H
 #define BLOGDEMO_SHARPEN_FILTER_H
 

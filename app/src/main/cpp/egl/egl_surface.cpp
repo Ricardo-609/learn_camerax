@@ -2,6 +2,7 @@
 #include "../utils/logger.h"
 
 EglSurface::EglSurface() {
+    // 创建EGLCore
     m_core = new EglCore();
 }
 

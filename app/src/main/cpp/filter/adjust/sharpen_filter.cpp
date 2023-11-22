@@ -1,7 +1,3 @@
-//
-// Created by poney.ma on 2020/11/3.
-//
-
 #include "sharpen_filter.h"
 
 void SharpenFilter::OnInit() {
@@ -50,18 +46,18 @@ const GLchar *SharpenFilter::GetVertexShader() {
            "attribute vec4 position;\n"
            "attribute vec4 inputTextureCoordinate;\n"
            "\n"
-           "uniform float imageWidthFactor; \n"
-           "uniform float imageHeightFactor; \n"
-           "uniform float sharpness;\n"
+           "uniform float imageWidthFactor; \n"         // 屏幕宽度步长因子
+           "uniform float imageHeightFactor; \n"        // 屏幕高度步长因子
+           "uniform float sharpness;\n"                 // 锐化核心值，由外层用户输入
            "\n"
-           "varying vec2 textureCoordinate;\n"
+           "varying vec2 textureCoordinate;\n"          // 当前纹理坐标
            "varying vec2 leftTextureCoordinate;\n"
            "varying vec2 rightTextureCoordinate; \n"
            "varying vec2 topTextureCoordinate;\n"
            "varying vec2 bottomTextureCoordinate;\n"
            "\n"
-           "varying float centerMultiplier;\n"
-           "varying float edgeMultiplier;\n"
+           "varying float centerMultiplier;\n"          // Laplacian算子中心值
+           "varying float edgeMultiplier;\n"            // Laplacian算子边缘值
            "\n"
            "void main()\n"
            "{\n"

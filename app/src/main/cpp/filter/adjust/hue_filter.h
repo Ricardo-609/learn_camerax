@@ -1,7 +1,3 @@
-//
-// Created by poney.ma on 2020/10/30.
-//
-
 #ifndef BLOGDEMO_HUE_FILTER_H
 #define BLOGDEMO_HUE_FILTER_H
 
