@@ -3,7 +3,6 @@
 #include "gl_render.h"
 #include "../utils/logger.h"
 #include "../render/image_render.h"
-#include "../drawer/triangle_drawer.h"
 
 void GLRender::InitRenderThread() {
     // 使用智能指针，线程结束时，自动删除本类指针

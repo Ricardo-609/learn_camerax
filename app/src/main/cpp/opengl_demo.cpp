@@ -1,5 +1,4 @@
 #include <jni.h>
-#include "drawer/triangle_drawer.h"
 #include "utils/logger.h"
 #include "render/image_render.h"
 // 需要加上这个宏不然编译器会编译失败

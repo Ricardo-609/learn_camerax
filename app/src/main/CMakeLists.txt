@@ -24,8 +24,6 @@ add_library( # Sets the name of the library.
         ${NATIVE_FILTER_DIR}/utils/stb_image.h
 
         ${NATIVE_FILTER_DIR}/drawer/base_drawer.h
-        ${NATIVE_FILTER_DIR}/drawer/triangle_drawer.h
-        ${NATIVE_FILTER_DIR}/drawer/triangle_drawer.cpp
         ${NATIVE_FILTER_DIR}/render/image_render.h
         ${NATIVE_FILTER_DIR}/render/image_render.cpp
 
