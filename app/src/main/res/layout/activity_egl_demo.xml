@@ -1,40 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <androidx.camera.view.PreviewView
-        android:id="@+id/viewFinder"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+    android:layout_height="match_parent">
 
     <SurfaceView
-        android:id="@+id/surfaceView"
-        android:layout_width="150dp"
-        android:layout_height="200dp"
-        android:adjustViewBounds="true"
-        android:layout_gravity="top | right"/>
-
+        android:id="@+id/surface"
+        android:layout_width="300dp"
+        android:layout_height="400dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/filter_adjust"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_gravity="bottom">
-
-        <Button
-            android:id="@+id/camera_capture_button"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:scaleType="fitCenter"
-            android:text="Take Photo"
-            android:layout_gravity="center"/>
-
+        app:layout_constraintTop_toBottomOf="@+id/surface">
 
         <SeekBar
             android:id="@+id/seekBar"
@@ -109,6 +93,6 @@
             </RadioGroup>
         </HorizontalScrollView>
 
-    </LinearLayout>
 
-</FrameLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,18 +8,33 @@ android {
 
     defaultConfig {
         applicationId "com.ricardo.learn_camerax"
-        minSdkVersion 30
+        minSdkVersion 28
         targetSdkVersion 34
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        externalNativeBuild {
+            cmake {
+                cppFlags "-g"
+            }
+//            ndk {
+//                abiFilters "arm64-v8a"
+//            }
+        }
     }
 
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path "src/main/CMakeLists.txt"
+            version "3.10.2"
         }
     }
     compileOptions {
@@ -41,4 +56,7 @@ dependencies {
     implementation "androidx.camera:camera-camera2:$camerax_version"
     implementation "androidx.camera:camera-lifecycle:$camerax_version"
     implementation "androidx.camera:camera-view:1.0.0-alpha27"
+
+    compile 'com.jakewharton:butterknife:10.0.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
 }
